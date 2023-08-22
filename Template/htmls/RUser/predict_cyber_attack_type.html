@@ -1,0 +1,148 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+        .style7 {color: #FFFF00}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF CYBER ATTACK TYPE !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="1023" align="center">
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center" class="style4">ENTER DATASETS DETAILS HERE !!! </div></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center"><span class="style4">Enter ID Number</span> 
+                                      <input type="text" name="idnumber">
+                                    </div></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="289" height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">datetime</span></div></td>
+                                    <td width="209"><input type="text" name="datetime"></td>
+                                    <td width="331" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">host</span></div></td>
+                                    <td width="174"><input type="text" name="host"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">RID</span></div></td>
+                                    <td><input type="text" name="RID"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter </strong></span><span class="style4">proto</span></div></td>
+                                    <td><input type="text" name="proto"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">spt</span></div></td>
+                                    <td><input type="text" name="spt"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">dtp</span></div></td>
+                                    <td><input type="text" name="dtp"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">ipaddress</span></div></td>
+                                    <td><input type="text" name="ipaddress"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">cc</span></div></td>
+                                    <td><input type="text" name="cc"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">country</span></div></td>
+                                    <td><input type="text" name="country"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter locale</strong></span><span class="style4"></span></div></td>
+                                    <td><input type="text" name="locale"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">latitude</span></div></td>
+                                    <td><input type="text" name="latitude"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span> <span class="style4">longitude</span></div></td>
+                                    <td><input type="text" name="longitude"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style7 style2 style4"><strong>Enter</strong></span><span class="style4"> Sources</span><span class="style4"></span></div></td>
+                                    <td><input type="text" name="Sources"></td>
+                                    <td bgcolor="#FFFFFF"><div align="center">
+                                      <input name="submit" type="submit" class="style1" value="Predict">
+                                    </div></td>
+                                    <td bgcolor="#FFFFFF">&nbsp;</td>
+                                  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="665" height="75" border="0" align="center" >
+                                    <tr><td width="382" bgcolor="#FF0000"><div align="center"><span class="style6">Predicted Cyber Attack Type</span> <span class="style4">::</span> </div></td>
+
+
+
+                                      <td width="273" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{objs}}</div></td></tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

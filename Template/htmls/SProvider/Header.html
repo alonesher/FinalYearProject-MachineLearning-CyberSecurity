@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Provider</title>
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+<style>
+    body{background: url("{% static 'bg.jpg' %}");
+	background-size:cover;
+	font-family: 'Russo One', sans-serif;
+	background-color: #000000;
+    }
+    h1{
+    color:white;
+    }
+.topnav {
+  overflow: hidden;
+  background-color: #812;
+}
+
+.topnav a {
+  float: left;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #8e4fd1;
+  color: white;
+}
+.style1 {color: #FF0000}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+
+<h1 align="center" class="style1">Adaptive Hierarchical Cyber Attack Detection and Localization in Active Distribution Systems</h1>
+
+<div  class="topnav">
+
+    <a href="{% url 'Train_Test_DataSets' %}">Train & Test Cyber Data Sets </a>
+    <a href="{% url 'likeschart' 'bar' %}">View Cyber Datasets Trained Accuracy in Bar Chart </a>
+    <a href="{% url 'charts1' 'line' %}"> View Cyber Datasets Trained  Accuracy Results </a>
+    <a  href="{% url 'View_Prediction_Of_Cyber_Attack_Type' %}">View Prediction Of Cyber Attack Type</a>
+    <a href="{% url 'View_Prediction_Of_Cyber_Attack_Type_Ratio' %}">View Prediction Of Cyber Attack Type Ratio </a>
+    <a href="{% url 'Download_Trained_DataSets' %}">Download Predicted Datasets</a>
+    <a href="{% url 'charts' 'line' %}">View Cyber Attack Type Ratio Results </a>
+    <a href="{% url 'View_Remote_Users' %}">View All Remote Users</a>
+    <a href="{% url 'login'  %}">Logout</a>
+
+</div>
+
+
+
+<div class="mainholder">
+{% block researchblock %}
+{% endblock %}
+</div>
+</body>
+</html>

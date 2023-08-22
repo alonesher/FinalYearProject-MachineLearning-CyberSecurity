@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote User</title>
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+<style>
+      body{background: url("{% static 'bg.jpg' %}");
+	background-size:cover;
+	font-family: 'Russo One', sans-serif;
+	background-color: #000000;
+    }
+    h1{
+    color:white;
+    }
+.topnav {
+  overflow: hidden;
+  background-color: #812;
+}
+
+.topnav a {
+  float: left;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #8e4fd1;
+  color: white;
+}
+.style1 {color: #00FFFF}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+
+<h1 align="center" class="style1">Adaptive Hierarchical Cyber Attack Detection and Localization in Active Distribution Systems</h1>
+
+<div  class="topnav">
+
+     <a  href="{% url 'predict_cyber_attack_type' %}">PREDICT CYBER ATTACK TYPE</a>
+     <a href="{% url 'ViewYourProfile' %}">VIEW YOUR PROFILE</a>
+     <a href="{% url 'login' %}">LOGOUT</a>
+</div>
+
+<div class="mainholder">
+{% block userblock %}
+{% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View Prediction Of Cyber Attack Type </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table border="5" align="center" bordercolor="#FF00FF">
+                               <tr>
+
+                                   <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Datetime</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">host</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">RID</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">proto</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">spt</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">dtp</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">ipaddress</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">cc</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">country</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">locale</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">latitude</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">longitude</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Sources</span></div></td>
+<td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Prediction</span></div></td>
+
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.datetime}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.host}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.RID}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.proto}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.spt}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.dtp}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.ipaddress}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.cc}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.country}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.locale}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.latitude}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.longitude}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Sources}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Prediction}}</td>
+
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

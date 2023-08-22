@@ -1,0 +1,102 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+<style>
+    body{
+	background-color: #FFFFFF;
+    }
+    .menu table{
+        width:100%;
+        text-align:center;
+
+    }
+
+    .menu table td:hover{
+         background:rgb(0,0,0);
+    }
+
+     .menu table td{
+          background: #584b4f;
+     }
+
+     .menu table,.menu table th,.menu table td {
+          border: ;
+          border-collapse: collapse;
+     }
+
+     .menu table th,.menu table  td {
+          padding: 15px;
+     }
+     .topic h1{
+           color:white;
+           padding:2px;
+           text-align:center;
+           border-style:none;
+           height:100px;
+           width:1330px;
+           float:left;
+     }
+     #chartContainer{
+            width: 900px;
+            margin-left: 365px;
+            margin-top: -354px;
+            position: fixed;
+     }
+     .sidemenu{
+     margin-top: 118px;
+     }
+</style>
+
+
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: ""
+	},
+	data: [{
+	{% if dislike_chart == "bar" %}
+		type: "bar",
+	{% elif dislike_chart == "pie" %}
+		type: "pie",
+	{% elif dislike_chart == "spline" %}
+		type: "spline",
+	{% endif %}
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: [
+		{% for o in form %}
+			{y: {{o.dcount}}, label: "{{o.names}}"},
+		{% endfor %}
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+<body>
+<br>
+<div class="topic">
+
+
+
+<div class="sidemenu">
+    <h3 style="color:black;margin-left:60px;margin-top:80px"><a href="{% url 'dislikeschart' 'pie' %}" >PIE CHAERT<br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </a><a href="{% url 'dislikeschart' 'bar' %}">BAR CHART</a></h3>
+    <h3 style="color:white;margin-left:60px;margin-top:100px;"><a href="{% url 'dislikeschart' 'coloumn' %}"></a></h3>
+</div>
+<div id="chartContainer" class="graph"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+
+</body>
+{% endblock %}

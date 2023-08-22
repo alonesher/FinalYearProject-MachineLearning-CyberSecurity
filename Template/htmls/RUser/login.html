@@ -1,0 +1,103 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<title>Login</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<head>
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background: url("{% static 'bg.jpg' %}");
+			}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        .style4 {color: #00FFFF; font-weight: bold; }
+        .style5 {
+	font-family: 'Righteous', cursive;
+	color: #FF0000;
+	font-weight: bold;
+}
+        .style6 {color: #FF0000; font-weight: bold; }
+        </style>
+	</head>
+	<body>
+	<div class="container-fluid">
+		<div >
+			<h2 class="style6 text-center" id="title">Adaptive Hierarchical Cyber Attack Detection and Localization in Active Distribution Systems</h2>
+			 <p class="text-center">
+				<span class="style1"><small id="passwordHelpInline" class="text-muted">cyber attack localization, adaptive, hierarchical,online, distribution networks.</small></span> </p>
+ 			<hr>
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center">&nbsp;</p>
+					  </fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+
+				<div class="col-md-5">
+ 				 		<form method="POST" role="form">
+							{% csrf_token %}
+
+						<fieldset>
+                             {% load static %}
+						<img src="{% static '/login.jpg' %}" alt="My image">
+							<p class="style5"> Login Using Your Account: </p>
+
+							<div class="form-group">
+								<input type="text" name="username"   placeholder="User Name" required>
+							</div>
+							<div class="form-group">
+								<input type="password" name="password"   placeholder="Password" required>
+							</div>
+							<div>
+								<input type="submit" name="submit1"  class="btn btn-md" value="sign_in">
+							</div></br>
+
+							<p class="style5"> Login Using Your Account: </p>
+
+							<div>
+
+							<button class="btn btn-lg "><a href="{% url 'serviceproviderlogin' %}">SERVICE PROVIDER</a></button>
+                                <button class="btn btn-lg "><a href="{% url 'Register1' %}">REGISTER</a></button>
+ 							</div>
+ 						</fieldset>
+				</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</body>
+
+
+</html>
